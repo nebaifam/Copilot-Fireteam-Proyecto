@@ -1,0 +1,81 @@
+:host {
+  display: block;
+  padding: 2rem 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #23282f 0%, #2d343e 100%);
+  color: #f7f9fb;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #7fd1ff;
+  margin-bottom: 0.75rem;
+}
+
+.home-hero h2 {
+  margin: 0;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  line-height: 1.05;
+}
+
+.home-hero p {
+  margin: 1rem 0 0;
+  max-width: 40rem;
+  color: #d6dbe5;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.primary-button {
+  border: none;
+  background: #5c6fff;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #4758f0;
+  transform: translateY(-1px);
+}
+
+.team-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section-header h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.section-header p {
+  margin: 0;
+  color: #5f6d7a;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
