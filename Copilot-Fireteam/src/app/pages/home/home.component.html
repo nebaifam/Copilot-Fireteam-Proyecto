@@ -1,0 +1,21 @@
+<section class="home-hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Copilot Fireteam</span>
+    <h2>Gestiona equipos y jugadores con estilo</h2>
+    <p>Bienvenido al frontend. Aquí puedes explorar un diseño moderno basado en componentes standalone y estilos CSS limpios.</p>
+  </div>
+  <div class="hero-actions">
+    <button class="primary-button">Crear equipo</button>
+  </div>
+</section>
+
+<section class="team-list">
+  <div class="section-header">
+    <h3>Equipos disponibles</h3>
+    <p>Revisa la información de los equipos activos y su estado.</p>
+  </div>
+
+  <div class="cards-grid">
+    <app-team-card *ngFor="let team of teams" [team]="team"></app-team-card>
+  </div>
+</section>
