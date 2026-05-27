@@ -1,4 +1,4 @@
-package com.example.equiposjugadores.model;
+package com.copilotfireteam.equiposjugadores.model;
 
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonBackReference;

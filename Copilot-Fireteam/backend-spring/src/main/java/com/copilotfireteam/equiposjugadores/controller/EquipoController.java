@@ -1,7 +1,7 @@
-package com.example.equiposjugadores.controller;
+package com.copilotfireteam.equiposjugadores.controller;
 
-import com.example.equiposjugadores.model.Equipo;
-import com.example.equiposjugadores.service.EquipoService;
+import com.copilotfireteam.equiposjugadores.model.Equipo;
+import com.copilotfireteam.equiposjugadores.service.EquipoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.example.equiposjugadores.repository;
+package com.copilotfireteam.equiposjugadores.repository;
 
-import com.example.equiposjugadores.model.Equipo;
+import com.copilotfireteam.equiposjugadores.model.Equipo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EquipoRepository extends JpaRepository<Equipo, Long> {

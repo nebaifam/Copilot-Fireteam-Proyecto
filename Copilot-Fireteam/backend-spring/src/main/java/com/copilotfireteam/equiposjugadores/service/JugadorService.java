@@ -1,8 +1,8 @@
-package com.example.equiposjugadores.service;
+package com.copilotfireteam.equiposjugadores.service;
 
-import com.example.equiposjugadores.model.Jugador;
-import com.example.equiposjugadores.repository.EquipoRepository;
-import com.example.equiposjugadores.repository.JugadorRepository;
+import com.copilotfireteam.equiposjugadores.model.Jugador;
+import com.copilotfireteam.equiposjugadores.repository.EquipoRepository;
+import com.copilotfireteam.equiposjugadores.repository.JugadorRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

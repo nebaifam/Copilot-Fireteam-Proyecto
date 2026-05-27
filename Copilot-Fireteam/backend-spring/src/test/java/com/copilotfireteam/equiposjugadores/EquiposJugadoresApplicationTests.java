@@ -1,4 +1,4 @@
-package com.example.equiposjugadores;
+package com.copilotfireteam.equiposjugadores;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
