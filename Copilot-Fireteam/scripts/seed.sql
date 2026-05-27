@@ -1,12 +1,12 @@
-﻿-- seed.sql
--- Datos de prueba para equipo (1) -> futbolista (N)
+-- seed.sql
+-- Datos de prueba para equipo (1) -> jugador (N)
 
-INSERT INTO equipo (id_equipo, nombre, ciudad, fundacion) VALUES
-(1, 'Real Madrid', 'Madrid', 1902),
-(2, 'FC Barcelona', 'Barcelona', 1899),
-(3, 'Atletico de Madrid', 'Madrid', 1903);
+INSERT INTO equipo (id, nombre, ciudad) VALUES
+(1, 'Real Madrid', 'Madrid'),
+(2, 'FC Barcelona', 'Barcelona'),
+(3, 'Atletico de Madrid', 'Madrid');
 
-INSERT INTO futbolista (id_futbolista, nombre, posicion, dorsal, id_equipo) VALUES
+INSERT INTO jugador (id, nombre, posicion, dorsal, equipo_id) VALUES
 (1, 'Thibaut Courtois', 'Portero', 1, 1),
 (2, 'Jude Bellingham', 'Centrocampista', 5, 1),
 (3, 'Vinicius Junior', 'Delantero', 7, 1),
