@@ -1,8 +1,8 @@
-package com.example.demo.service;
+package com.example.equiposjugadores.service;
 
-import com.example.demo.model.Jugador;
-import com.example.demo.repository.EquipoRepository;
-import com.example.demo.repository.JugadorRepository;
+import com.example.equiposjugadores.model.Jugador;
+import com.example.equiposjugadores.repository.EquipoRepository;
+import com.example.equiposjugadores.repository.JugadorRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
