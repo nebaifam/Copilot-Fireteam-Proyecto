@@ -9,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./app.scss']
 })
 export class App {
-  protected readonly title = signal('Copilot-Fireteam');
+  protected readonly title = signal('Gestor Deportivo');
 }

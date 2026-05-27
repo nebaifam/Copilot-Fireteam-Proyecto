@@ -1,0 +1,68 @@
+<section class="page">
+  <div class="page-header">
+    <div>
+      <span class="eyebrow">Jugadores</span>
+      <h2>Gestion de jugadores</h2>
+      <p>Alta, listado y borrado de jugadores asociados a equipos.</p>
+    </div>
+    <span class="counter">{{ totalJugadores() }} jugadores</span>
+  </div>
+
+  <div *ngIf="mensajeExito()" class="alert alert-success">{{ mensajeExito() }}</div>
+  <div *ngIf="mensajeError()" class="alert alert-error">{{ mensajeError() }}</div>
+
+  <section class="panel">
+    <h3>Crear jugador</h3>
+    <form [formGroup]="jugadorForm" (ngSubmit)="guardarJugador()" class="form-grid">
+      <label>
+        Nombre
+        <input type="text" formControlName="nombre" placeholder="Nombre del jugador" />
+      </label>
+
+      <label>
+        Posicion
+        <input type="text" formControlName="posicion" placeholder="Portero, defensa..." />
+      </label>
+
+      <label>
+        Dorsal
+        <input type="number" formControlName="dorsal" min="1" />
+      </label>
+
+      <label>
+        Equipo
+        <select formControlName="equipoId">
+          <option [ngValue]="null">Selecciona un equipo</option>
+          <option *ngFor="let equipo of equipos()" [ngValue]="equipo.id">{{ equipo.nombre }}</option>
+        </select>
+      </label>
+
+      <button type="submit" [disabled]="jugadorForm.invalid">Guardar jugador</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <h3>Listado de jugadores</h3>
+      <button type="button" class="ghost-button" (click)="cargarDatos()">Actualizar</button>
+    </div>
+
+    <div *ngIf="cargando()" class="loading">Cargando jugadores...</div>
+
+    <div *ngIf="!cargando() && jugadores().length === 0" class="empty-state">
+      Todavia no hay jugadores. El futuro script del backend podra precargar datos.
+    </div>
+
+    <div *ngIf="!cargando() && jugadores().length > 0" class="players-grid">
+      <article class="player-card" *ngFor="let jugador of jugadores()">
+        <div>
+          <h3>{{ jugador.nombre }}</h3>
+          <p>{{ jugador.posicion }}</p>
+        </div>
+        <span class="number">#{{ jugador.dorsal }}</span>
+        <p><strong>Equipo:</strong> {{ jugador.equipo?.nombre || 'Sin equipo' }}</p>
+        <button type="button" class="danger-button" (click)="eliminarJugador(jugador.id)">Eliminar</button>
+      </article>
+    </div>
+  </section>
+</section>

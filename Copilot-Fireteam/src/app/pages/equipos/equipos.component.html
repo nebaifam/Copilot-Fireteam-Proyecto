@@ -1,0 +1,74 @@
+<section class="page">
+  <div class="page-header">
+    <div>
+      <span class="eyebrow">Equipos</span>
+      <h2>Gestion de equipos</h2>
+      <p>Consulta, crea y elimina equipos registrados en el backend.</p>
+    </div>
+    <span class="counter">{{ totalEquipos() }} equipos</span>
+  </div>
+
+  <div *ngIf="mensajeExito()" class="alert alert-success">{{ mensajeExito() }}</div>
+  <div *ngIf="mensajeError()" class="alert alert-error">{{ mensajeError() }}</div>
+
+  <section class="panel">
+    <h3>Crear equipo</h3>
+    <form [formGroup]="equipoForm" (ngSubmit)="guardarEquipo()" class="form-grid">
+      <label>
+        Nombre
+        <input type="text" formControlName="nombre" placeholder="Valencia CF" />
+        <small *ngIf="equipoForm.controls.nombre.invalid && equipoForm.controls.nombre.touched">
+          Introduce un nombre valido.
+        </small>
+      </label>
+
+      <label>
+        Ciudad
+        <input type="text" formControlName="ciudad" placeholder="Valencia" />
+        <small *ngIf="equipoForm.controls.ciudad.invalid && equipoForm.controls.ciudad.touched">
+          Introduce una ciudad valida.
+        </small>
+      </label>
+
+      <button type="submit" [disabled]="equipoForm.invalid">Guardar equipo</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <h3>Listado de equipos</h3>
+      <button type="button" class="ghost-button" (click)="cargarEquipos()">Actualizar</button>
+    </div>
+
+    <div *ngIf="cargando()" class="loading">Cargando equipos...</div>
+
+    <div *ngIf="!cargando() && equipos().length === 0" class="empty-state">
+      Todavia no hay equipos. Cuando se anada el script del backend, apareceran aqui.
+    </div>
+
+    <div *ngIf="!cargando() && equipos().length > 0" class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Jugadores</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let equipo of equipos()">
+            <td>{{ equipo.id }}</td>
+            <td><strong>{{ equipo.nombre }}</strong></td>
+            <td>{{ equipo.ciudad }}</td>
+            <td>{{ equipo.jugadores?.length || 0 }}</td>
+            <td>
+              <button type="button" class="danger-button" (click)="eliminarEquipo(equipo.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</section>

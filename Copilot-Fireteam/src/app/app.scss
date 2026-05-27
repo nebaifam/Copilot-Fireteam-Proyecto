@@ -54,4 +54,23 @@
 
 .app-main {
   padding: 2rem 1.5rem 3rem;
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
 }

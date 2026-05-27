@@ -1,21 +1,37 @@
 <section class="home-hero">
   <div class="hero-copy">
     <span class="eyebrow">Copilot Fireteam</span>
-    <h2>Gestiona equipos y jugadores con estilo</h2>
-    <p>Bienvenido al frontend. Aquí puedes explorar un diseño moderno basado en componentes standalone y estilos CSS limpios.</p>
+    <h2>Gestiona equipos y jugadores</h2>
+    <p>Frontend Angular conectado al backend Spring Boot. Los datos se leen desde la API real.</p>
   </div>
+
   <div class="hero-actions">
-    <button class="primary-button">Crear equipo</button>
+    <a class="primary-button" routerLink="/equipos">Crear equipo</a>
+    <a class="secondary-button" routerLink="/jugadores">Crear jugador</a>
   </div>
 </section>
 
 <section class="team-list">
   <div class="section-header">
-    <h3>Equipos disponibles</h3>
-    <p>Revisa la información de los equipos activos y su estado.</p>
+    <h3>Resumen</h3>
+    <p *ngIf="!cargando()">Estado actual: {{ resumen() }}</p>
+    <p *ngIf="cargando()">Cargando datos...</p>
   </div>
 
   <div class="cards-grid">
-    <app-team-card *ngFor="let team of teams" [team]="team"></app-team-card>
+    <article class="metric-card">
+      <span>Equipos</span>
+      <strong>{{ totalEquipos() }}</strong>
+    </article>
+
+    <article class="metric-card">
+      <span>Jugadores</span>
+      <strong>{{ totalJugadores() }}</strong>
+    </article>
+
+    <article class="metric-card">
+      <span>API</span>
+      <strong>{{ apiConectada() ? 'Conectada' : 'Sin conexion' }}</strong>
+    </article>
   </div>
 </section>
